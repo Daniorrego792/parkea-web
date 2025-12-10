@@ -1,0 +1,103 @@
+/* Colores de la Marca */
+:root {
+    --parkea-blue: #0F4C81;
+    --parkea-green: #28A745;
+    --parkea-yellow: #FFC107;
+    --parkea-light: #F8F9FA;
+}
+
+/* Estilos Globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--parkea-light);
+}
+
+/* Estilo del Banner Principal (Para Fondo3.PNG) */
+.banner-principal {
+    height: 400px; /* Ajusta la altura del banner */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    /* Oscurecer un poco el fondo para que el texto resalte */
+}
+.banner-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura */
+    z-index: 1;
+}
+.banner-principal > * {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre la capa oscura */
+}
+
+/* Navbar Personalizado */
+.navbar-brand img {
+    border-radius: 5px;
+}
+.navbar .nav-link {
+    color: var(--parkea-blue) !important;
+    font-weight: 500;
+}
+.navbar .nav-link:hover {
+    color: var(--parkea-green) !important;
+}
+
+/* Estilos de Card de Parqueadero */
+.parqueadero-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+.parqueadero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.parqueadero-card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Utilidad para el rating simulado */
+.rating-stars {
+    color: var(--parkea-yellow);
+}
+
+/* Responsive: Ocultar/Mostrar secciones */
+section:not(.active) {
+    display: none;
+}
+
+/* Estilos para el detalle de seleccion (basado en frame) */
+#detalleParqueadero img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Estilo para simular el layout del frame Pago.png */
+#pago .card-title {
+    border-bottom: 2px solid var(--parkea-green);
+    padding-bottom: 10px;
+}
+
+/* Adaptabilidad Móvil */
+@media (max-width: 768px) {
+    .banner-principal {
+        height: 300px;
+    }
+    .banner-principal h1 {
+        font-size: 2rem;
+    }
+    .banner-principal p {
+        font-size: 1rem;
+    }
+    /* Ajuste para las imágenes del Home */
+    #home img.img-fluid {
+        margin-bottom: 15px;
+    }
+}
